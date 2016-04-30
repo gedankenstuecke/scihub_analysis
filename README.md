@@ -1,3 +1,5 @@
+![Analyzing the SciHub downloads](https://raw.githubusercontent.com/gedankenstuecke/scihub_analysis/master/graphs/downloads_per_population.png)
+
 # SciHub Data Analysis
 These are some scripts to analyse the data sets published by SciHub. You can find some analysis and texts about insights already won from the data at [Science](http://www.sciencemag.org/news/2016/04/whos-downloading-pirated-papers-everyone) and the [DataDryad Blog](https://blog.datadryad.org/2016/04/28/sci-hub-stories/).
 
