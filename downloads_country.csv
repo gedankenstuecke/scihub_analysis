@@ -1,3 +1,4 @@
+Downloads	Country
 1	 Federated States of Micronesia
 2	 Caribbean Netherlands
 2	 Falkland Islands (Islas Malvinas)
@@ -10,9 +11,9 @@
 5	 Burundi
 5	 Guernsey
 5	 Sierra Leone
-6	 Saint Lucia
-6	 Saint Vincent and the Grenadines
-7	 Collectivity of Saint Martin
+6	 SaintLucia
+6	 SaintVincent and the Grenadines
+7	 Collectivity of SaintMartin
 7	 Samoa
 8	 San Marino
 9	 Anguilla
@@ -32,7 +33,7 @@
 46	 Bermuda
 47	 Liechtenstein
 49	 Grenada
-50	 Saint Kitts and Nevis
+50	 SaintKitts and Nevis
 50	 The Bahamas
 52	 U.S. Virgin Islands
 56	 Swaziland
@@ -79,7 +80,7 @@
 669	 Gabon
 765	 Turkmenistan
 776	 Kyrgyzstan
-829	 Sint Maarten
+829	 SintMaarten
 1026	 Mongolia
 1030	 Honduras
 1090	 Seychelles
