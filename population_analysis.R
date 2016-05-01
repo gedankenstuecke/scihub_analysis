@@ -60,8 +60,8 @@ ggsave("graphs/normalized_downloads_unemployment.png", width = 594, height = 220
 
 # correlation downloads per 1000 capita / GDP per Capita
 p <- ggplot(sh,aes(x=GDP.per.capita..current.USD.,y=Downloads.per.capita,label=Country)) + stat_smooth(method="glm") + geom_point(color="red") + geom_text_repel() + scale_x_log10("GDP per Capita") + scale_y_log10("Downloads per 1000 Capita") + theme_minimal() + ggtitle("# of Sci-Hub Downloads per 1000 Capita / GDP per Capita (data from World Bank)")
-ggsave("graphs/normalized_downloads_unemployment.pdf", width = 594, height = 220, units = "mm")
-ggsave("graphs/normalized_downloads_unemployment.png", width = 594, height = 220, units = "mm")
+ggsave("graphs/normalized_downloads_gdp.pdf", width = 594, height = 220, units = "mm")
+ggsave("graphs/normalized_downloads_gdp.png", width = 594, height = 220, units = "mm")
 
 # internet users / GDP
 p <- ggplot(sh,aes(x=GDP.per.capita..current.USD.,y=Internet.Users..per.100.People.,label=Country)) + stat_smooth(method="glm") + geom_point(color="red") + geom_text_repel() + scale_x_log10("GDP per Capita") + scale_y_log10("Internet Users per 100 Capita") + theme_minimal() + ggtitle("# of Internet Users amongst 100 People / GDP per Capita (data from World Bank)")
