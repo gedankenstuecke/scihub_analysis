@@ -67,3 +67,15 @@ ggsave("graphs/normalized_downloads_gdp.png", width = 594, height = 220, units =
 p <- ggplot(sh,aes(x=GDP.per.capita..current.USD.,y=Internet.Users..per.100.People.,label=Country)) + stat_smooth(method="glm") + geom_point(color="red") + geom_text_repel() + scale_x_log10("GDP per Capita") + scale_y_log10("Internet Users per 100 Capita") + theme_minimal() + ggtitle("# of Internet Users amongst 100 People / GDP per Capita (data from World Bank)")
 ggsave("graphs/gdp_vs_internet.pdf", width = 594, height = 220, units = "mm")
 ggsave("graphs/gdp_vs_internet.png", width = 594, height = 220, units = "mm")
+
+# % GDP spent on education vs. downloads per 1000 capita normalized for GDP
+edu <- read.csv(file="expediture_education_percent_education2009.csv",sep=",",stringsAsFactor=FALSE)
+sh <- merge(sh,edu,by.x=c("ISO.3166.1.alpha.3"),by.y="Country.Code")
+
+sh$downloads_per_pop_per_gdp <- sh$Downloads.per.1000capita / sh$GDP.per.capita..current.USD.
+sh$education_expediture_percent_gdp <- as.numeric(sh$X2009..YR2009.)
+sh$X2009..YR2009. <- NULL
+
+p <- ggplot(sh,aes(x=education_expediture_percent_gdp,y=downloads_per_pop_per_gdp,label=Country)) + stat_smooth(method="glm") + geom_point(color="red") + geom_text_repel() + scale_x_log10("% GDP spent on Education") + scale_y_log10("downloads per 1000 capita, corrected for GDP size") + theme_minimal()
+ggsave("graphs/normalized_downloads_percent_gdp_education.pdf", width = 594, height = 220, units = "mm")
+ggsave("graphs/normalized_downloads_percent_gdp_education.png", width = 594, height = 220, units = "mm")
