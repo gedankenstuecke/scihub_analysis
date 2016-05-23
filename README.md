@@ -3,7 +3,7 @@
 # SciHub Data Analysis
 These are some scripts to analyse the data sets published by SciHub. You can find some analysis and texts about insights already won from the data at [Science](http://www.sciencemag.org/news/2016/04/whos-downloading-pirated-papers-everyone) and the [DataDryad Blog](https://blog.datadryad.org/2016/04/28/sci-hub-stories/).
 
-I wrote [a blogpost based on the analyses done with this code](http://ruleofthirds.de/analyzing-scihub-data/) which you might want to check out for some context.
+I wrote [a blogpost based on the analyses done with this code](http://ruleofthirds.de/analyzing-scihub-data/) which you might want to check out for some context. There's also a [follow up blogpost by me on how to integrate the information on whether access was made from universities or now](http://ruleofthirds.de/scihub-part2/).
 
 ## When are people downloading via SciHub?
 Run `download_time_analysis.R` and pass one of the `*.tab` files, yields a `graphs/download_time.pdf`. Watch out: The time zones are not taken into account, everything's UTC. For that reason there are two filtered files in `graphs/`, one for Hong Kong (UTC+7) and one for Germany (UTC+1) as examples.
@@ -58,7 +58,7 @@ The R scripts use *ggplot2*, *ggrepel*, *ggthemes* and *lubridate*.
 It's available at DataDryad, so it's not included here. [Download it from there](http://dx.doi.org/10.5061/dryad.q447c).
 
 ### What are the timezones?
-The times in the data set are all in UTC, so you'll have to adjust them for the corresponding time zones if interested in analyzing those. Or you could just ignore it for now as I did above, because I'm lazy.
+The times in the data set are all in UTC+3 (it said UTC earlier, but I was corrected on that), so you'll have to adjust them for the corresponding time zones if interested in analyzing those. Or you could just ignore it for now as I did above, because I'm lazy.
 
 ### What are the licenses?
 The Sci-Hub data is [CC-Zero, as indicated on DataDryad](http://datadryad.org/resource/doi:10.5061/dryad.q447c). The [World Bank uses their own ToS for the data](http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html). My uglyish code is under MIT license, please take it.
