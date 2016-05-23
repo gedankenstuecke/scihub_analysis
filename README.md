@@ -22,7 +22,7 @@ Last but not least the script also gives you the number of downloads per 1.000 i
 
 ## Are people inside universities using Sci-Hub? And to which extend?
 
-I was lucky enough to be put in touch with Sci-Hub and they used this list to classify their data on whether it comes from university IP ranges or not. For privacy reasons the data is more highly aggregated.
+I was lucky enough to be put in touch with Sci-Hub and they used this list to classify their data on whether it comes from university IP ranges or not. For privacy reasons the data is more highly aggregated. [A blog post on these analyses can be found here](http://ruleofthirds.de/scihub-part2/).
 
 The first data set (*uni-stats-date.tab*) contains the percentage of academic downloads for a given day.
 
