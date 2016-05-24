@@ -55,3 +55,10 @@ ggsave("graphs/university_downloads_per_researchspending.png", width = 594, heig
 p <- ggplot(shc_sub,aes(x= reorder(Country, -x),y=x,fill=Country)) + geom_bar(stat="identity")+ theme_minimal() + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + scale_fill_discrete(guide = FALSE) + scale_y_continuous("% Downloads from Universities") + scale_x_discrete("Countries by % Downloads from Universities")
 ggsave("graphs/university_downloads_ranking.pdf", width = 594, height = 220, units = "mm")
 ggsave("graphs/university_downloads_ranking.png", width = 594, height = 220, units = "mm")
+
+countries <- read.csv(file="uni-stats-country.replaced.tab",sep="\t",head=F)
+countries$date <-  as.Date(as.character(countries$V1))
+csub <- subset(countries,as.character(countries$V2) == "Greece" | as.character(countries$V2) == "Germany" | as.character(countries$V2) == "France"| as.character(countries$V2) == "Spain"| as.character(countries$V2) == "Italy"| as.character(countries$V2) =="Belgium"| as.character(countries$V2) =="United Kingdom"| as.character(countries$V2) =="Sweden"| as.character(countries$V2) =="Iran"| as.character(countries$V2) =="Netherlands"| as.character(countries$V2) =="Poland"| as.character(countries$V2) =="Czech Republic"| as.character(countries$V2) =="Austria"| as.character(countries$V2) =="Switzerland"| as.character(countries$V2) =="Israel"| as.character(countries$V2) =="China"| as.character(countries$V2) == "United States")
+p <- ggplot(csub,aes(x=date,y=V3,color=V2)) + geom_line() + scale_color_discrete(guide=FALSE) + theme_minimal() + scale_x_date("Date") + scale_y_continuous("% Academic Downloads") + geom_text_repel(data = subset(csub, csub$date == min(date)|csub$date == max(date)),aes(label=V2))
+ggsave("graphs/university_downloads_country_per_time.pdf", width = 594, height = 220, units = "mm")
+ggsave("graphs/university_downloads_country_per_time.png", width = 594, height = 220, units = "mm")
